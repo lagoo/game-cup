@@ -1,0 +1,8 @@
+<div class="card shadow-md" (click)="onSelect()" [ngClass]="{'card-selected': isSelected, 'card-hover': hoverable}">
+  <img class="image" [ngClass]="{'card-img': fitImage}" [src]="game.imageUrl" alt="game info">
+  <div class="middle">
+    <div class="text"><h5>{{game.title}}</h5></div>
+  </div>
+  <div class="card-img-overlay">    
+  </div>
+</div>

@@ -1,0 +1,47 @@
+.card-selected {
+    border: 3px solid #283593;
+}
+.card-selected .image {
+    opacity: 0.3;
+}
+.card-selected .middle {
+    opacity: 1;
+}
+
+.card-img {
+    width: 100%;    
+    height: 15vw;    
+    object-fit: cover;
+}
+
+.image {
+    opacity: 1;
+    display: block;    
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+  
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text {    
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+.card-hover:hover .image {
+    opacity: 0.3;
+}
+
+.card-hover:hover .middle {
+    opacity: 1;
+}

@@ -1,0 +1,37 @@
+<div *ngIf="haveWinnerAndLoser; then result else selection"></div>
+<ng-template #selection>
+    <app-game-catalogue (canSubmit)="getWinnerAndLoser($event)"></app-game-catalogue>
+</ng-template>
+<ng-template #result>
+    <div class="row text-center">
+        <div class="col-lg-12 col-md-12 mb-4">
+            <div class="card bg-light mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">Resultado Final</h4>
+                    <p class="card-text">Veja o resultado final do campeonato de game de forma simples e rapida</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-lg-1 offset-lg-11">
+            <button type="button" class="btn btn-primary" (click)="resetTournament()">
+              Voltar
+            </button>
+          </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-lg-6 col-md-6 mb-4">
+            <h3>Primeiro lugar</h3>
+            <app-game-card [game]="competidors.firstPlace" [fit-image]='false' [selectable]='false'>
+            </app-game-card>
+        </div>
+
+        <div class="col-lg-6 col-md-6 mb-4">
+            <h3>Segundo lugar</h3>
+            <app-game-card [game]="competidors.secondPlace" [fit-image]='false' [selectable]='false'>
+            </app-game-card>
+        </div>
+    </div>
+</ng-template>

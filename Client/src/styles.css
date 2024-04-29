@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-orange {
+  background-color: rgb(255, 162, 74);
+}
+
+.main-container {    
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow:hidden;
+ }
+
+ .footer {
+  height: 50px;
+  text-align: center;
+} 

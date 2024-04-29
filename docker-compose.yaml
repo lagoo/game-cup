@@ -1,0 +1,24 @@
+version: "3"
+services: 
+    nginx:
+        image: ${DOCKER_REGISTRY-}rev-proxy-gamecup
+        build: 
+            context: ./Nginx
+            dockerfile: Dockerfile
+        ports: 
+            - "8080:80"
+        restart: always
+    webapi:
+        image: ${DOCKER_REGISTRY-}webapi-gamecup
+        build: 
+            context: ./API
+            dockerfile: WebApi/Dockerfile
+        ports:
+            - "5000:80"
+    webui:
+        image: ${DOCKER_REGISTRY-}webui-gamecup
+        build: 
+            context: ./Client
+            dockerfile: Dockerfile
+        ports:
+            - "3000:80"

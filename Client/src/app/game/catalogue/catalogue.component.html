@@ -1,0 +1,42 @@
+<div class="row text-center">
+  <div class="col-lg-12 col-md-12 mb-4">
+    <div class="card bg-light mb-3">
+      <div class="card-body">
+        <h4 class="card-title">Fase de seleção</h4>
+        <p class="card-text">Selecione 8 games que você deseja que entrem na competição e depois pressione o botão
+          'Gerar Campeonato' para prosseguir.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row text-center">
+  <div class="col-lg-3 col-md-3">
+    <h4 style="text-align: left;">
+      {{selectedGames.length}} Games Selecionados
+    </h4>
+  </div>
+  <div class="col-lg-3 offset-lg-6">
+    <button type="button" class="btn" (click)="sendGames()" [ngClass]="{'btn-light': selectedEnoughGames(),'btn-success': !selectedEnoughGames()}"
+      [disabled]="selectedEnoughGames()">
+      Gerar Meu Campeonato
+    </button>
+  </div>
+  <div *ngIf="haveAnyGames; then gamesList else noGames"></div>
+  <ng-template #noGames>
+    <div class="col-lg-12 col-md-12 mb-4">
+      <h4>Nenhum game disponivel para seleção</h4>
+    </div>
+  </ng-template>
+  <ng-template #gamesList>
+    <div class="col-lg-12 col-md-12 md-4" *ngFor="let avaliableGame of avaliableGames.years">
+      <h4>{{ avaliableGame.year}}</h4>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col-lg-4 col-md-4 mb-4" *ngFor="let game of avaliableGame.games">
+          <app-game-card [game]="game" (click)="onSelectChange($event)">
+          </app-game-card>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
