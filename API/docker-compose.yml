@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  webapi:
+    image: ${DOCKER_REGISTRY-}webapi-gamecup
+    build:
+      context: .
+      dockerfile: WebApi/Dockerfile
+    ports:
+      - "5000:80"
