@@ -1,4 +1,4 @@
-# IagoGibin-20210810 - Game Cup L3
+# IagoGibin-20210810 - Game Cup
 
 ## Getting Started
 The way to get started is to install Docker in your computer and:
